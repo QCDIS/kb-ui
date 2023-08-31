@@ -7,6 +7,33 @@
 | `API_URL` | URL kb-api (e.g. http://localhost:8000/api/v1) | Yes                       |                      |
 
 
+## Development environment
+
+### Initial setup
+
+Install npm packages:
+
+```shell
+cd app
+npm ci
+```
+
+Setup runtime environment variables in `app/.env`:
+
+```
+API_URL=http://localhost:8000/api/v1
+```
+
+`API_URL` should point to a running instance of the [kb-api](https://github.com/QCDIS/kb-api). For quick testing, consider using `https://search.envri.eu/api/v1`.
+
+### Run development server
+
+```shell
+cd app
+npm run dev
+```
+
+
 ## License
 
 Copyright 2023 University of Amsterdam / LifeWatch ERIC
