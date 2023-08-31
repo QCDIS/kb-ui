@@ -1,5 +1,11 @@
 # Knowledge base UI
 
+## Environment variables
+
+| Name      | Description                                    | Required                  | Default value        |
+|-----------|------------------------------------------------|---------------------------|----------------------|
+| `API_URL` | URL kb-api (e.g. http://localhost:8000/api/v1) | Yes                       |                      |
+
 
 ## License
 
