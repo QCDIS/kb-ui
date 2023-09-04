@@ -25,7 +25,7 @@ const SearchResults: React.FC<Props> = ({searchFormData, results}) => {
       >
         {results.map((res: SearchResult) => {
           return(
-            <div>
+            <div key={res.url}>
               <Link
                 href={res.url}
                 className="text-primaryDark hover:underline"

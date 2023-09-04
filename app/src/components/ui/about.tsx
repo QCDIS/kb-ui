@@ -25,7 +25,7 @@ export default function About() {
 
   function renderPerson(person: any) {
     return (
-      <li>
+      <li key={person.name}>
         <a href={person.url} className={clsx(person.url && "hover:underline")}>{person.name} ({person.affiliation})</a>
       </li>
     )

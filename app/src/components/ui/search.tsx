@@ -31,9 +31,6 @@ const Search: React.FC<Props> = (props) => {
       return []
     }
     const url = `/api/search?q=${q}`
-    const requestOptions: RequestInit = {
-      method: "GET",
-    };
     const res = await fetch(url)
     return res.json()
   }
