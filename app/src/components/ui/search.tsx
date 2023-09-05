@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { useState } from "react";
-import { clsx } from 'clsx';
+import React, {useEffect, useState} from "react";
+import {clsx} from 'clsx';
 
-import { SearchFormData, SearchResult } from "@/_types/search";
+import { ResourceType, SearchFormData, SearchResult } from "@/_types/search";
 
 import SearchTitle from "@/components/ui/search-title";
 import SearchForm from "@/components/ui/search-form";
@@ -16,7 +15,7 @@ type Props = {
 
 const Search: React.FC<Props> = (props) => {
 
-  const [searchFormData, setSearchFormData] = useState<SearchFormData>(new FormData())
+  const [searchFormData, setSearchFormData] = useState<SearchFormData>({})
   const [searchResults, setSearchResults] = useState<Array<SearchResult>>([])
 
   useEffect(
@@ -25,12 +24,12 @@ const Search: React.FC<Props> = (props) => {
     },
     [searchFormData])
 
-  async function get_search_results(formData: FormData | undefined) {
-    const q = formData && formData.get("q")
-    if (!q) {
+  async function get_search_results(searchFormData: SearchFormData) {
+    if (!searchFormData.q) {
       return []
     }
-    const url = `/api/search?q=${q}`
+    const resourceTypeIsAll = (searchFormData.resourceType === 'all' as unknown as ResourceType)
+    const url = `/api/search${resourceTypeIsAll ? '' : `/${searchFormData.resourceType}`}?q=${searchFormData.q}`
     const res = await fetch(url)
     return res.json()
   }
@@ -46,7 +45,7 @@ const Search: React.FC<Props> = (props) => {
           "flex-col items-center p-16 space-y-20"
       )}>
         <SearchTitle compact={props.showResults}></SearchTitle>
-        <SearchForm compact={props.showResults} searchFormData={searchFormData} setSearchFormData={setSearchFormData}></SearchForm>
+        <SearchForm compact={props.showResults} setSearchFormData={setSearchFormData}></SearchForm>
       </div>
 
       {props.showResults &&

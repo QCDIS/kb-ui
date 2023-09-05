@@ -1,37 +1,75 @@
-import React, { useEffect, useRef } from "react";
-import { useRouter, useSearchParams } from 'next/navigation'
-import { clsx } from 'clsx';
+import React, { useEffect, useState } from "react";
+import {useRouter, useSearchParams} from 'next/navigation'
+import {clsx} from 'clsx';
 
-import { SearchFormData } from "@/_types/search";
+import {ResourceType, SearchFormData} from "@/_types/search";
 
 type Props = {
   compact: boolean,
-  searchFormData: SearchFormData,
-  setSearchFormData: React.Dispatch<React.SetStateAction<FormData>>,
+  setSearchFormData: React.Dispatch<React.SetStateAction<SearchFormData>>,
 }
 
-const SearchForm: React.FC<Props> = ({compact, searchFormData, setSearchFormData}) => {
+const SearchForm: React.FC<Props> = ({compact, setSearchFormData}) => {
+
+  const strToResourceType = (s: string): ResourceType => {
+    return s as unknown as ResourceType
+  }
+  const resourceTypeToStr = (r: ResourceType): string => {
+    return r as unknown as string
+  }
+
+  const availableResourceTypes = [
+    {value: strToResourceType("all"), display_name: "All"},
+    {value: strToResourceType("web_pages"), display_name: "Web Pages"},
+    {value: strToResourceType("datasets"), display_name: "Datasets"},
+    {value: strToResourceType("apis"), display_name: "APIs"},
+    {value: strToResourceType("notebooks"), display_name: "Notebooks"},
+  ]
+
+  const submitSearch = () => {
+    q && push(`/search?q=${q}&resourceType=${resourceType}`)
+  }
+
+  const updateSearchFormData = () => {
+    q && setSearchFormData({q: q, resourceType: resourceType})
+  }
 
   const { push } = useRouter()
   const searchParams = useSearchParams()
 
-  const formRef = useRef<HTMLFormElement>(null)
+  const [q, setQ] = useState<string>(searchParams.get("q") || "")
+  const [resourceType, setResourceType] = useState<ResourceType>(strToResourceType(searchParams.get("resourceType") || "all"))
+
+  const onQChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQ(e.target.value)
+  }
+
+  const onResourceTypeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setResourceType(strToResourceType(e.target.value))
+  }
+
+  // Update search form data after initial render (grabs url value)
+  useEffect(
+    () => {
+      updateSearchFormData()
+    },
+    []
+  )
+
+  // Update search data and url on form submit
+  const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault()
+    submitSearch()
+    updateSearchFormData()
+  }
 
   useEffect(
     () => {
-      const formData = new FormData(formRef.current || undefined)
-      setSearchFormData(formData)
+      submitSearch()
+      updateSearchFormData()
     },
-    [formRef]
+    [resourceType]
   )
-
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
-    e.preventDefault()
-    const formData = new FormData(e.currentTarget)
-    console.log(formData)
-    setSearchFormData(formData)
-    push(`/search?q=${formData.get("q")}`)
-  }
 
   return (
     <form
@@ -41,8 +79,7 @@ const SearchForm: React.FC<Props> = ({compact, searchFormData, setSearchFormData
         compact? "flex-grow": "min-w-full",
         compact? "items-left": "items-center",
       )}
-      ref={formRef}
-      onSubmit={handleSubmit}
+      onSubmit={onSubmit}
     >
 
       {/* Search box */}
@@ -58,7 +95,8 @@ const SearchForm: React.FC<Props> = ({compact, searchFormData, setSearchFormData
               focus:outline-none focus:border-transparent focus:ring-2 focus:ring-secondary
               "
             placeholder="Search the ENVRI Knowledge Base"
-            defaultValue={searchParams.get("q") || undefined}
+            value={q}
+            onChange={onQChange}
           />
           <button
             className="
@@ -82,19 +120,20 @@ const SearchForm: React.FC<Props> = ({compact, searchFormData, setSearchFormData
 
       {/* Search categories */}
       <ul className="flex flex-row space-x-2">
-        {["All", "Webpages", "Datasets", "APIs", "Notebooks"].map((resourceType) => {
+        {availableResourceTypes.map((availableResourceType) => {
           return (
-            <li key={resourceType}>
+            <li key={availableResourceType.value}>
               <input
                 type="radio"
-                name="resource_type"
-                value={resourceType}
-                id={resourceType}
+                name="resourceType"
                 className="hidden peer"
-                defaultChecked={resourceType === "All"}
+                id={resourceTypeToStr(availableResourceType.value)}
+                value={availableResourceType.value}
+                checked={resourceType === availableResourceType.value}
+                onChange={onResourceTypeChange}
               />
               <label
-                htmlFor={resourceType}
+                htmlFor={resourceTypeToStr(availableResourceType.value)}
                 className="
                   relative rounded-full px-6 py-2.5 text-s border
                   transition duration-200 ease-in-out
@@ -103,7 +142,7 @@ const SearchForm: React.FC<Props> = ({compact, searchFormData, setSearchFormData
                   active:bg-secondary active:outline-none active:border-transparent active:ring-2 active:ring-secondary
                   peer-checked:bg-secondary
                   "
-              >{resourceType}</label>
+              >{availableResourceType.display_name}</label>
             </li>
           )
         })}

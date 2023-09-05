@@ -1,13 +1,14 @@
 export enum ResourceType {
+  All = <any> 'all',
   WebPages = <any> 'web_pages',
   Apis = <any> 'apis',
   Datasets = <any> 'datasets',
   Notebooks = <any> 'notebooks'
 }
 
-export interface SearchFormData extends FormData {
-  query?: string,
-  resource_type?: ResourceType,
+export interface SearchFormData {
+  q?: string,
+  resourceType?: ResourceType,
 }
 
 export interface SearchResult {

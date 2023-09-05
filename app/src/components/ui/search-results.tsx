@@ -17,7 +17,7 @@ const SearchResults: React.FC<Props> = ({searchFormData, results}) => {
   return (
     <div className="flex flex-col px-16 py-5 space-y-10">
       <p>{searchFormData && (
-        `Results for “${searchFormData.get("q")}” (resource type: ${searchFormData.get("resource_type")})`
+        `Results for “${searchFormData.q}” (resource type: ${searchFormData.resourceType})`
       )}
       </p>
       <div
