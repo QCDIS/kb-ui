@@ -12,7 +12,7 @@ export interface SearchFormData {
 }
 
 export interface SearchResult {
-  resource_type: ResourceType;
+  resource_type: string;
   title: string;
   description: string;
   url: string;
@@ -21,7 +21,7 @@ export interface SearchResult {
 
 export namespace SearchResultNS {
   export interface DetailsWebPages {
-    researchInfrastructure?: string;
+    research_infrastructure?: string;
   }
 
   export interface DetailsApis {

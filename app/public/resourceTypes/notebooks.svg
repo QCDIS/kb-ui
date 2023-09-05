@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="24"
+   height="24"
+   viewBox="0 0 24 24"
+   version="1.1"
+   id="svg1"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="translate(-102)">
+    <g
+       id="icon-notebooks">
+      <rect
+         style="fill:none;fill-opacity:0.238489;stroke:#000000;stroke-width:0.377953;stroke-linecap:butt;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         id="rect26"
+         width="11.622047"
+         height="15.620788"
+         x="108.18898"
+         y="4.1896062"
+         ry="0.94488192" />
+      <g
+         id="g27"
+         transform="matrix(0.93648238,0,0,0.937953,7.1978641,1.5684355)"
+         style="stroke-width:0.403271;stroke-dasharray:none">
+        <path
+           style="fill:#aa9a85;fill-opacity:1;stroke:#000000;stroke-width:0.403272;stroke-linecap:butt;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+           d="m 115.0941,7.998337 -2.09605,8.176737"
+           id="path26" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.403272;stroke-linecap:butt;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+           d="m 111.96168,9.2206434 -2.68445,2.8660626 2.68445,2.866062"
+           id="path27" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path27"
+           id="use27"
+           transform="matrix(-1,0,0,1,228.09215,4.2039985e-7)"
+           style="stroke-width:0.403272;stroke-dasharray:none" />
+      </g>
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.377953;stroke-linecap:butt;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         d="m 108.18898,6.1984253 h 11.62205"
+         id="path28" />
+      <rect
+         style="fill:#884040;fill-opacity:0;stroke:none;stroke-width:0.377953;stroke-linecap:butt;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         id="rect37"
+         width="24"
+         height="24"
+         x="102"
+         y="0" />
+    </g>
+  </g>
+</svg>

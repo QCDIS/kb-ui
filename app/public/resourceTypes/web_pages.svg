@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="24"
+   height="24"
+   viewBox="0 0 24 24"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="translate(-68)">
+    <g
+       id="icon-web_pages">
+      <circle
+         style="display:inline;fill:none;fill-opacity:0.238489;stroke:#000000;stroke-width:0.377953;stroke-linecap:butt;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         id="path17"
+         cx="80"
+         cy="12"
+         r="7.8103933" />
+      <ellipse
+         style="display:inline;fill:none;fill-opacity:0.238489;stroke:#000000;stroke-width:0.377953;stroke-linecap:butt;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         id="circle17"
+         cx="80"
+         cy="12"
+         rx="3.7900355"
+         ry="7.8103933" />
+      <path
+         style="display:inline;fill:none;fill-opacity:0.238489;stroke:#000000;stroke-width:0.377953;stroke-linecap:butt;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         d="M 73.31826,15.997602 H 86.772075"
+         id="path18" />
+      <path
+         style="display:inline;fill:none;fill-opacity:0.238489;stroke:#000000;stroke-width:0.377953;stroke-linecap:butt;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         d="M 73.219689,8.0023994 H 86.825954"
+         id="path21" />
+      <path
+         style="display:inline;fill:none;fill-opacity:0.238489;stroke:#000000;stroke-width:0.377953;stroke-linecap:butt;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         d="M 72.189607,12 H 87.810393"
+         id="path22" />
+      <rect
+         style="fill:#884040;fill-opacity:0;stroke:none;stroke-width:0.377953;stroke-linecap:butt;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         id="rect38"
+         width="24"
+         height="24"
+         x="68"
+         y="0" />
+    </g>
+  </g>
+</svg>

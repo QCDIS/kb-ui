@@ -17,10 +17,14 @@ const Search: React.FC<Props> = (props) => {
 
   const [searchFormData, setSearchFormData] = useState<SearchFormData>({})
   const [searchResults, setSearchResults] = useState<Array<SearchResult>>([])
+  const [resultsLoading, setResultsLoading] = useState(false)
 
   useEffect(
     () => {
-      get_search_results(searchFormData).then(setSearchResults)
+      setResultsLoading(true)
+      get_search_results(searchFormData)
+        .then(setSearchResults)
+        .then(() => {setResultsLoading(false)})
     },
     [searchFormData])
 
@@ -44,12 +48,16 @@ const Search: React.FC<Props> = (props) => {
           "flex-row justify-start pl-5 pr-16 py-5 space-x-5":
           "flex-col items-center p-16 space-y-20"
       )}>
-        <SearchTitle compact={props.showResults}></SearchTitle>
-        <SearchForm compact={props.showResults} setSearchFormData={setSearchFormData}></SearchForm>
+        <SearchTitle compact={props.showResults}/>
+        <SearchForm compact={props.showResults} setSearchFormData={setSearchFormData}/>
       </div>
 
       {props.showResults &&
-        <SearchResults searchFormData={searchFormData} results={searchResults}></SearchResults>
+        <SearchResults
+            searchFormData={searchFormData}
+            results={searchResults}
+            resultsLoading={resultsLoading}
+        />
       }
 
     </div>

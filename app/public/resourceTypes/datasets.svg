@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="24"
+   height="24"
+   viewBox="0 0 24 24"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="translate(-34)">
+    <g
+       id="icon-datasets">
+      <ellipse
+         style="fill:none;fill-opacity:0.238489;stroke:#000000;stroke-width:0.377953;stroke-linecap:square;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         id="path9"
+         cx="46"
+         cy="6.0640764"
+         rx="5.8110232"
+         ry="1.8750999" />
+      <path
+         style="fill:none;fill-opacity:0.238489;stroke:#000000;stroke-width:0.377953;stroke-linecap:square;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse9"
+         d="m 51.811023,17.935925 a 5.8110232,1.8750999 0 0 1 -2.905511,1.623884 5.8110232,1.8750999 0 0 1 -5.811024,0 5.8110232,1.8750999 0 0 1 -2.905511,-1.623884" />
+      <path
+         style="fill:none;fill-opacity:0.238489;stroke:#000000;stroke-width:0.377953;stroke-linecap:square;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse10"
+         d="m 51.811023,10.021359 a 5.8110232,1.8750999 0 0 1 -2.905511,1.623885 5.8110232,1.8750999 0 0 1 -5.811024,0 5.8110232,1.8750999 0 0 1 -2.905511,-1.623885" />
+      <path
+         style="fill:none;fill-opacity:0.238489;stroke:#000000;stroke-width:0.377953;stroke-linecap:square;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse11"
+         d="m 51.811023,13.978642 a 5.8110232,1.8750999 0 0 1 -2.905511,1.623885 5.8110232,1.8750999 0 0 1 -5.811024,0 5.8110232,1.8750999 0 0 1 -2.905511,-1.623885" />
+      <path
+         style="fill:none;fill-opacity:0.238489;stroke:#000000;stroke-width:0.377953;stroke-linecap:butt;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         d="M 51.811023,17.935925 V 6.0640764"
+         id="path11" />
+      <path
+         style="fill:none;fill-opacity:0.238489;stroke:#000000;stroke-width:0.377953;stroke-linecap:butt;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         d="M 40.188977,17.935925 V 6.0640764"
+         id="path12" />
+      <rect
+         style="fill:#884040;fill-opacity:0;stroke:none;stroke-width:0.377953;stroke-linecap:butt;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         id="rect36"
+         width="24"
+         height="24"
+         x="34"
+         y="0" />
+    </g>
+  </g>
+</svg>
